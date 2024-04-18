@@ -28,3 +28,20 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list -->
+
+# Made by Express + Typescript
+
+### this is a complete set of api for Create user, Verify email and login
+
+To start this server create a .env file in the root (same level of src) and add these variables
+
+- MONGO_URI (for database)
+- EMAIL (app password enabled gmail id)
+- EMAILPW (app password, enabled by google)
+
+now just run
+
+```
+npm i
+npm run dev
+```
