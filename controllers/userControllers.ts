@@ -67,7 +67,8 @@ export const sendOTP = async (req: Request, res: Response) => {
 
   try {
     const user: UserType | null = await Users.findOne({ email: email })
-    if (!user) return res.status(400).json({ error: 'User not found' })
+    if (!user)
+      return res.status(400).json({ error: 'To verify email, register first' })
     else {
       const OTP = Math.floor(1000 + Math.random() * 9000)
 
@@ -88,7 +89,9 @@ export const sendOTP = async (req: Request, res: Response) => {
       tarnsporter.sendMail(mailOptions, (error: any, info: any) => {
         if (error) {
           // console.log('error', error)
-          return res.status(400).json({ error: 'email not send' })
+          return res
+            .status(400)
+            .json({ error: 'unable to send varification mail' })
         } else {
           // console.log('Email sent', info)
           return res.status(201).json({ message: 'Email sent Successfully' })
